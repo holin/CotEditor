@@ -2,7 +2,7 @@
 Change Log
 ==========================
 
-3.7.6 (unreleased)
+3.8.0 (unreleased)
 --------------------------
 
 ### New Features
@@ -11,6 +11,13 @@ Change Log
 
 
 ### Improvements
+
+- Change the system requirement to __macOS 10.13 High Sierra and later__.
+
+
+
+3.7.6 (unreleased)
+--------------------------
 
 - Apply the change of “show other invisible characters” option immediately to the editors.
 - Add feedback about search in VoiceOver.
