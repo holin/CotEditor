@@ -9,7 +9,7 @@
 //  ---------------------------------------------------------------------------
 //
 //  © 2004-2007 nakamuxu
-//  © 2014-2018 1024jp
+//  © 2014-2019 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ final class SnippetKeyBindingManager: KeyBindingManager {
     
     override private init() {
         
-        _defaultKeyBindings = [KeyBinding(action: SnippetKeyBindingManager.action(index: 0),
+        _defaultKeyBindings = [KeyBinding(action: Self.action(index: 0),
                                           shortcut: Shortcut(modifierMask: .shift, keyEquivalent: "\r"))]
         self.defaultSnippets = UserDefaults.standard.registeredValue(for: .insertCustomTextArray)
         
@@ -83,7 +83,7 @@ final class SnippetKeyBindingManager: KeyBindingManager {
         
         return (0..<count).map { index in
             let title = String(format: "Insert Text %li".localized, index)
-            let action = type(of: self).action(index: index)
+            let action = Self.action(index: index)
             let keyBinding = keyBindings.first { $0.action == action }
             
             let item = KeyBindingItem(action: action, shortcut: keyBinding?.shortcut, defaultShortcut: .none)
@@ -128,7 +128,7 @@ final class SnippetKeyBindingManager: KeyBindingManager {
         
         guard
             let keyBinding = self.keyBindings.first(where: { $0.shortcut == shortcut }),
-            let index = type(of: self).snippetIndex(for: keyBinding.action),
+            let index = Self.snippetIndex(for: keyBinding.action),
             let snippetString = self.snippets[safe: index]
             else { return nil }
         
