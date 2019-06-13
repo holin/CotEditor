@@ -154,6 +154,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         // setup touchbar
         NSApp.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+    
     }
     
     

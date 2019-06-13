@@ -76,6 +76,8 @@ final class DocumentWindow: NSWindow {
             self?.invalidateTitlebarOpacity()
         }
         
+        self.level = .floating
+        
         // observe toggling fullscreen mode
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterOpaqueMode), name: NSWindow.willEnterFullScreenNotification, object: self)
         NotificationCenter.default.addObserver(self, selector: #selector(willExitOpaqueMode), name: NSWindow.willExitFullScreenNotification, object: self)
